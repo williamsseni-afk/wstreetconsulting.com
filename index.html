@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wilson Street Consulting — AI Intelligence Systems for Government & Enterprise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg-deep:#ffffff;--bg:#f6f9fb;--bg-elevated:#eaf1f5;--bg-card:#ffffff;--bg-card-hover:#f2f7fa;--border:rgba(74,111,138,0.22);--border-bright:rgba(74,111,138,0.5);--navy-primary:#4a6f8a;--navy-bright:#2a5078;--navy-vivid:#1a3a5c;--navy-deep:#0f2a47;--navy-glow:rgba(74,111,138,0.18);--navy-glow-strong:rgba(15,42,71,0.25);--teal:#14a797;--teal-bright:#1ec5b5;--teal-glow:rgba(20,167,151,0.15);--text-primary:#0f1f2e;--text-secondary:#4a5968;--text-dim:#7a8593;--font-display:'Playfair Display',Georgia,serif;--font-body:'Outfit',system-ui,sans-serif;--radius:16px;--radius-sm:10px;--radius-xs:6px}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--bg-deep);color:var(--text-primary);overflow-x:hidden;-webkit-font-smoothing:antialiased}a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:10000;mix-blend-mode:multiply}
+.grid-bg{position:fixed;inset:0;background-image:linear-gradient(rgba(74,111,138,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(74,111,138,0.08) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 48px;height:80px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.92);backdrop-filter:blur(24px) saturate(1.2);border-bottom:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,0.03)}
+.logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:18px;letter-spacing:-0.5px;color:var(--text-primary)}.logo-img{height:60px;width:auto;background:transparent;mix-blend-mode:multiply}
+.nav-links{display:flex;gap:32px;list-style:none}.nav-links a{font-size:13.5px;font-weight:600;color:var(--text-secondary);letter-spacing:0.5px;text-transform:uppercase;transition:color 0.3s;position:relative}.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--teal);transition:width 0.3s}.nav-links a:hover{color:var(--navy-deep)}.nav-links a:hover::after{width:100%}
+.nav-cta{padding:10px 28px;background:var(--navy-deep);border:none;border-radius:50px;color:white;font-family:var(--font-body);font-size:14px;font-weight:600;cursor:pointer;transition:transform 0.2s,box-shadow 0.3s,background .3s}.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px var(--navy-glow-strong);background:var(--navy-vivid)}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:100px 48px 100px;position:relative;z-index:1}.hero::before{content:'';position:absolute;width:900px;height:900px;background:radial-gradient(circle,var(--navy-glow) 0%,transparent 65%);top:5%;left:-10%;pointer-events:none}.hero::after{content:'';position:absolute;width:500px;height:500px;background:radial-gradient(circle,var(--teal-glow) 0%,transparent 65%);bottom:15%;right:5%;pointer-events:none}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 20px 8px 12px;background:var(--bg-elevated);border:1px solid var(--border-bright);border-radius:50px;font-size:13px;font-weight:600;color:var(--navy-deep);margin-bottom:36px;width:fit-content;animation:fadeUp .7s ease both}
+.eyebrow-dot{width:8px;height:8px;background:var(--teal);border-radius:50%;animation:blink 2s infinite}@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:var(--font-display);font-size:clamp(48px,7.5vw,88px);font-weight:400;line-height:1.05;letter-spacing:-2px;max-width:850px;animation:fadeUp .7s ease .1s both;color:var(--text-primary)}.hero h1 em{font-style:italic;color:var(--teal)}.hero h1 .gw{color:var(--navy-deep)}
+.hero-desc{font-size:18px;color:var(--text-secondary);max-width:560px;line-height:1.7;margin-top:32px;animation:fadeUp .7s ease .2s both}
+.hero-actions{display:flex;gap:16px;margin-top:48px;animation:fadeUp .7s ease .35s both}
+.btn-primary{padding:16px 40px;background:var(--navy-deep);border:none;border-radius:50px;color:white;font-family:var(--font-body);font-size:16px;font-weight:600;cursor:pointer;transition:transform 0.2s,box-shadow 0.3s,background .3s;position:relative;overflow:hidden}.btn-primary::after{content:'→';margin-left:10px;transition:transform .3s;display:inline-block}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px var(--navy-glow-strong);background:var(--navy-vivid)}.btn-primary:hover::after{transform:translateX(4px)}
+.btn-outline{padding:16px 40px;background:transparent;border:1.5px solid var(--navy-deep);border-radius:50px;color:var(--navy-deep);font-family:var(--font-body);font-size:16px;font-weight:600;cursor:pointer;transition:all .3s}.btn-outline:hover{background:var(--navy-deep);color:white}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+section{padding:120px 48px;position:relative;z-index:1}
+.section-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:4px;color:var(--navy-deep);margin-bottom:16px;display:flex;align-items:center;gap:12px}.section-tag::before{content:'';width:32px;height:2px;background:var(--navy-deep)}
+.section-title{font-family:var(--font-display);font-size:clamp(36px,4.5vw,56px);font-weight:400;letter-spacing:-1px;line-height:1.1;max-width:700px;color:var(--text-primary)}.section-title em{font-style:italic;color:var(--teal)}
+.use-cases{background:var(--bg);border-bottom:1px solid var(--border)}.uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px;max-width:1200px}
+.uc-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:40px 32px;transition:all .4s;position:relative;overflow:hidden;box-shadow:0 1px 3px rgba(15,31,46,0.04)}.uc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--navy-deep),var(--teal));transform:scaleX(0);transform-origin:left;transition:transform .4s}.uc-card:hover{border-color:var(--border-bright);background:var(--bg-card-hover);transform:translateY(-4px);box-shadow:0 16px 40px rgba(15,31,46,0.08)}.uc-card:hover::before{transform:scaleX(1)}
+.uc-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:24px;border:1px solid var(--border);background:linear-gradient(135deg,rgba(74,111,138,.15),rgba(74,111,138,.05))}
+.uc-card h3{font-size:22px;font-weight:700;letter-spacing:-.3px;margin-bottom:12px;color:var(--text-primary)}.uc-card p{font-size:15px;color:var(--text-secondary);line-height:1.7}
+.products-section{background:var(--bg-deep)}.pg{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:64px;max-width:1200px}
+.pc{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:48px 40px;transition:all .4s;position:relative;overflow:hidden;box-shadow:0 1px 3px rgba(15,31,46,0.04)}.pc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--navy-deep),var(--teal));transform:scaleX(0);transform-origin:left;transition:transform .4s}.pc:hover{border-color:var(--border-bright);background:var(--bg-card-hover);transform:translateY(-4px);box-shadow:0 16px 40px rgba(15,31,46,0.08)}.pc:hover::before{transform:scaleX(1)}
+.pc.flagship{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;background:linear-gradient(135deg,var(--bg-card) 0%,rgba(74,111,138,.06) 100%);border-color:var(--border-bright)}
+.fv{background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:32px;position:relative;overflow:hidden}.fv::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(74,111,138,.05),rgba(20,167,151,.04));pointer-events:none}
+.bm{position:relative;z-index:1}.bh{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border)}.btm{font-size:13px;font-weight:700;color:var(--navy-deep);letter-spacing:1.5px;text-transform:uppercase}.bd{font-size:11px;color:var(--text-dim);font-weight:600}
+.bl{height:8px;border-radius:4px;margin-bottom:10px}.bl:nth-child(1){width:100%;background:rgba(74,111,138,0.25)}.bl:nth-child(2){width:85%;background:rgba(74,111,138,0.18)}.bl:nth-child(3){width:92%;background:rgba(74,111,138,0.12)}
+.bs{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xs);padding:14px 16px;margin-top:16px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 1px 2px rgba(15,31,46,0.03)}.sl{font-size:12px;font-weight:600;color:var(--text-primary)}.si{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:3px 10px;border-radius:50px}.ih{background:rgba(196,69,69,0.1);color:#a33838;border:1px solid rgba(196,69,69,0.2)}.im{background:rgba(20,167,151,0.12);color:var(--teal);border:1px solid rgba(20,167,151,0.25)}
+.pi{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:24px;border:1px solid var(--border)}.ig{background:linear-gradient(135deg,rgba(74,111,138,.18),rgba(74,111,138,.06))}.igo{background:linear-gradient(135deg,rgba(20,167,151,.18),rgba(20,167,151,.06))}
+.pc h3{font-size:24px;font-weight:700;letter-spacing:-.5px;margin-bottom:12px;color:var(--text-primary)}.pc p{font-size:15px;color:var(--text-secondary);line-height:1.7}
+.pb{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:50px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;margin-top:20px;margin-right:8px}.pbf{background:rgba(20,167,151,.12);border:1px solid rgba(20,167,151,.3);color:var(--teal)}.pbs{background:rgba(74,111,138,.12);border:1px solid rgba(74,111,138,.3);color:var(--navy-deep)}
+.ai-disclaimer{margin-top:48px;max-width:1200px;background:var(--bg-elevated);border:1px solid var(--border);border-left:3px solid var(--teal);border-radius:var(--radius-sm);padding:20px 24px;font-size:13px;color:var(--text-secondary);line-height:1.65}.ai-disclaimer strong{color:var(--navy-deep);font-weight:700;display:block;margin-bottom:6px;font-size:12px;text-transform:uppercase;letter-spacing:1.5px}
+.ai-disclaimer-cta{margin-top:56px;max-width:580px;padding:12px 16px;font-size:10px;line-height:1.5;text-align:left;position:relative;z-index:1;opacity:.7}.ai-disclaimer-cta strong{font-size:9px;margin-bottom:3px;letter-spacing:1.2px}
+.process-section{background:var(--bg-elevated)}.psg{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:64px;max-width:1200px;background:var(--border);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}.ps{background:var(--bg-card);padding:44px 32px;transition:background .3s}.ps:hover{background:var(--bg-card-hover)}.sn{font-family:var(--font-display);font-size:56px;font-weight:700;color:var(--navy-deep);opacity:.5;line-height:1;margin-bottom:24px}.ps h3{font-size:18px;font-weight:700;margin-bottom:12px;color:var(--text-primary)}.ps p{font-size:14px;color:var(--text-secondary);line-height:1.65}
+.about-section{background:var(--bg-deep);border-top:1px solid var(--border)}.al{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:64px;max-width:1200px;align-items:start}.at p{font-size:16px;color:var(--text-secondary);line-height:1.8;margin-bottom:24px}.at p:first-child{font-size:20px;color:var(--text-primary);line-height:1.65;font-weight:500}.av{display:grid;grid-template-columns:1fr 1fr;gap:20px}.vc{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px 24px;transition:all .3s;box-shadow:0 1px 3px rgba(15,31,46,0.03)}.vc:hover{border-color:var(--border-bright);transform:translateY(-2px);box-shadow:0 8px 24px rgba(15,31,46,0.06)}.vc h4{font-size:15px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px;color:var(--text-primary)}.vc p{font-size:13px;color:var(--text-secondary);line-height:1.6}
+.cta-section{text-align:center;display:flex;flex-direction:column;align-items:center;background:var(--bg);border-top:1px solid var(--border);position:relative;overflow:hidden}.cta-section::before{content:'';position:absolute;width:800px;height:800px;background:radial-gradient(circle,var(--navy-glow) 0%,transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}.cta-section .section-title{max-width:600px;text-align:center;margin:0 auto;position:relative;z-index:1}.cta-sub{font-size:17px;color:var(--text-secondary);max-width:500px;line-height:1.7;margin-top:24px;position:relative;z-index:1}.cta-actions{display:flex;gap:16px;margin-top:40px;position:relative;z-index:1}
+footer{padding:64px 48px 32px;border-top:1px solid var(--border);position:relative;z-index:1;background:var(--bg)}.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}.fb .logo{margin-bottom:16px}.fb .logo-img{height:48px;background:transparent;mix-blend-mode:multiply}.fb p{color:var(--text-secondary);font-size:14px;line-height:1.65;max-width:280px}.fc h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;color:var(--navy-deep);margin-bottom:20px}.fc a{display:block;color:var(--text-secondary);font-size:14px;padding:5px 0;transition:color .2s}.fc a:hover{color:var(--navy-deep)}.fbot{padding-top:32px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:8px;color:var(--text-dim);font-size:13px}.fbot .entity-line{font-weight:500;color:var(--text-secondary)}
+.mobile-menu-btn{display:none;background:transparent;border:1px solid var(--border-bright);width:42px;height:42px;border-radius:10px;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:4px;padding:0}
+.mobile-menu-btn span{display:block;width:18px;height:2px;background:var(--navy-deep);border-radius:2px;transition:transform .3s,opacity .3s}
+.mobile-menu-btn.active span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.mobile-menu-btn.active span:nth-child(2){opacity:0}
+.mobile-menu-btn.active span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:64px;left:0;right:0;background:rgba(255,255,255,0.98);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);box-shadow:0 8px 24px rgba(15,31,46,0.08);padding:24px 20px 32px;display:none;flex-direction:column;gap:4px;z-index:999;max-height:calc(100vh - 64px);overflow-y:auto}
+.mobile-menu.open{display:flex}
+.mobile-menu a{padding:16px 20px;color:var(--text-primary);font-size:16px;font-weight:600;border-radius:10px;border:1px solid transparent;transition:background .2s,border-color .2s}
+.mobile-menu a:hover,.mobile-menu a:active{background:var(--bg-elevated);border-color:var(--border)}
+.mobile-menu .nav-cta-mobile{margin-top:16px;background:var(--navy-deep);color:white;text-align:center;border:none;font-weight:600}
+.mobile-menu .nav-cta-mobile:hover,.mobile-menu .nav-cta-mobile:active{background:var(--navy-vivid);color:white;border-color:transparent}
+
+#cookieBanner{position:fixed;bottom:24px;left:24px;right:24px;max-width:560px;margin:0 auto;background:#fff;border:1px solid var(--border-bright);border-radius:var(--radius);padding:24px 28px;box-shadow:0 20px 60px rgba(15,31,46,0.15);z-index:9999;display:none}
+#cookieBanner.show{display:block}
+#cookieBanner h4{font-size:15px;font-weight:700;color:var(--navy-deep);margin-bottom:8px}
+#cookieBanner p{font-size:13px;color:var(--text-secondary);line-height:1.6;margin-bottom:16px}
+#cookieBanner p a{color:var(--navy-deep);text-decoration:underline}
+.cookie-actions{display:flex;gap:10px;flex-wrap:wrap}
+.cookie-btn{padding:10px 20px;border-radius:50px;font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer;border:1px solid var(--navy-deep);transition:all .2s}
+.cookie-btn.primary{background:var(--navy-deep);color:white}.cookie-btn.primary:hover{background:var(--navy-vivid)}
+.cookie-btn.secondary{background:transparent;color:var(--navy-deep)}.cookie-btn.secondary:hover{background:var(--bg-elevated)}
+
+@media(max-width:1024px){.pg,.uc-grid{grid-template-columns:1fr}.pc.flagship{grid-template-columns:1fr}.al{grid-template-columns:1fr;gap:48px}.fg{grid-template-columns:1fr 1fr}}
+
+@media(max-width:860px){
+  nav{padding:0 20px;height:64px}
+  .nav-links{display:none}
+  .nav-cta{display:none}
+  .mobile-menu-btn{display:flex}
+  .logo-img{height:44px}
+  .logo span{font-size:16px}
+  section{padding:72px 20px}
+  .hero{padding:88px 20px 64px;min-height:auto}
+  .hero h1{font-size:clamp(36px,9vw,56px);letter-spacing:-1px;line-height:1.08}
+  .hero-eyebrow{font-size:12px;padding:7px 16px 7px 10px;margin-bottom:28px}
+  .hero-desc{font-size:16px;margin-top:24px;line-height:1.65}
+  .hero-actions{margin-top:36px;gap:12px}
+  .section-title{font-size:clamp(28px,7vw,40px);letter-spacing:-0.5px}
+  .section-tag{font-size:10px;letter-spacing:3px;margin-bottom:12px}
+  .uc-grid,.pg{gap:16px;margin-top:40px}
+  .uc-card,.pc{padding:32px 24px}
+  .uc-card h3,.pc h3{font-size:20px}
+  .pc.flagship{padding:32px 24px;gap:32px}
+  .pc.flagship h3{font-size:24px !important}
+  .fv{padding:24px}
+  .psg{grid-template-columns:1fr;gap:1px;margin-top:40px}
+  .ps{padding:32px 24px}
+  .sn{font-size:42px;margin-bottom:16px}
+  .ps h3{font-size:17px}
+  .at p:first-child{font-size:18px}
+  .at p{font-size:15px;line-height:1.7}
+  .av{grid-template-columns:1fr;gap:14px}
+  .vc{padding:24px 20px}
+  .cta-section{padding:80px 20px}
+  .cta-sub{font-size:15px;margin-top:20px}
+  .cta-actions{margin-top:32px;flex-direction:column;align-items:stretch;width:100%;max-width:320px}
+  .hero-actions{flex-direction:column;align-items:stretch;width:100%;max-width:320px}
+  .btn-primary,.btn-outline{padding:15px 32px;font-size:15px;width:100%}
+  footer{padding:48px 20px 24px}
+  .fg{grid-template-columns:1fr;gap:32px;margin-bottom:32px}
+  .fb p{max-width:100%}
+  .fbot{font-size:12px}
+  .ai-disclaimer{margin-top:32px;padding:16px 20px;font-size:12.5px}
+  #cookieBanner{left:16px;right:16px;bottom:16px;padding:20px}
+}
+
+@media(max-width:480px){
+  .hero{padding:80px 18px 56px}
+  .hero h1{font-size:clamp(32px,9.5vw,44px)}
+  section{padding:64px 18px}
+  .uc-card,.pc,.pc.flagship{padding:28px 22px}
+  .bs{padding:11px 13px;flex-direction:column;align-items:flex-start;gap:8px}
+  .sl{font-size:11px}
+  .nav-cta{display:none}
+}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<nav>
+  <div class="logo">
+    <img src="WSC-horizontal.jpeg" class="logo-img" alt="Wilson Street Consulting">
+  </div>
+  <ul class="nav-links">
+    <li><a href="#solutions">Solutions</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book a Briefing</button>
+  <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#solutions">Solutions</a>
+  <a href="#products">Products</a>
+  <a href="#process">Process</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <a href="#contact" class="nav-cta-mobile">Book a Briefing</a>
+</div>
+
+<section class="hero" id="home">
+  <h1>We build <em>AI intelligence</em> systems that make <span class="gw">institutions</span> smarter</h1>
+  <p class="hero-desc">Wilson Street Consulting designs and deploys AI-powered intelligence briefing systems for leadership teams of private enterprises, institutions, NGOs, regulatory bodies, and government agencies. Our products provide key intelligence on global and local policy changes, competitor moves, market signals, and more, for any organisation that needs to stay one step ahead.</p>
+  <div class="hero-actions">
+    <button class="btn-primary" onclick="document.getElementById('process').scrollIntoView({behavior:'smooth'})">See How It Works</button>
+    <button class="btn-outline" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Learn More</button>
+  </div>
+</section>
+
+<section class="use-cases" id="solutions">
+  <div class="section-tag">Who It's For</div>
+  <h2 class="section-title">Intelligence for every enterprise that <em>can't afford blind spots</em></h2>
+  <div class="uc-grid">
+    <div class="uc-card reveal"><div class="uc-icon">🏢</div><h3>Private Enterprises</h3><p>Companies operating in fast-moving industries where a missed regulatory change, competitor move, or market signal costs millions. Get structured intelligence before your competitors do.</p></div>
+    <div class="uc-card reveal"><div class="uc-icon">🎓</div><h3>Institutions &amp; NGOs</h3><p>Universities, research bodies, multilateral organisations, and development agencies tracking global trends, funding shifts, and policy changes across their domains of interest.</p></div>
+    <div class="uc-card reveal"><div class="uc-icon">🏛</div><h3>Government Agencies</h3><p>Ministries, regulatory bodies, investment authorities, and other agencies that need to monitor policy shifts, competitor nations, and sector-level developments on a daily basis.</p></div>
+  </div>
+</section>
+
+<section class="products-section" id="products">
+  <div class="section-tag">Products</div>
+  <h2 class="section-title">Intelligence products built for <em>decision-makers</em></h2>
+  <div class="pg">
+    <div class="pc flagship reveal">
+      <div>
+        <span class="pb pbf">★ Flagship Product</span>
+        <h3 style="margin-top:16px;font-size:28px">Aquila</h3>
+        <p style="margin-top:12px">An AI-powered intelligence briefing system that monitors global and local news, analyses strategic relevance to your institution's mandate, rates each story by impact, and delivers a structured brief to leadership automatically on a daily, weekly, or monthly basis.</p>
+        <p style="margin-top:16px">Built on a three-layer stack: automated brief generation, a living knowledge vault that compounds insight over time, and on-demand strategic reporting. Aquila is configured to your sector, your competitors, and your stakeholders.</p>
+        <div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap"><span class="pb pbs">Custom Briefs</span><span class="pb pbs">Knowledge Vault</span><span class="pb pbs">Strategic Reports</span></div>
+      </div>
+      <div class="fv">
+        <div class="bm">
+          <div class="bh"><span class="btm">Aquila</span><span class="bd">Daily · Automated</span></div>
+          <div class="bl"></div><div class="bl"></div><div class="bl"></div>
+          <div class="bs"><span class="sl">Regulatory Policy Shift Detected</span><span class="si ih">High</span></div>
+          <div class="bs"><span class="sl">Competitor Market Entry Signal</span><span class="si im">Medium</span></div>
+          <div class="bs"><span class="sl">Stakeholder Activity Flagged</span><span class="si ih">High</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="pc reveal"><div class="pi igo">🧠</div><h3>Living Knowledge Vault</h3><p>Every brief feeds a growing knowledge base. Entities, relationships, storylines, and strategic patterns are tracked and cross-referenced automatically. The system gets smarter with every cycle, surfacing connections and trends that human analysts would miss.</p><span class="pb pbf">AI-Powered</span></div>
+  </div>
+</section>
+
+<section class="process-section" id="process">
+  <div class="section-tag">How It Works</div>
+  <h2 class="section-title">From raw news to <em>strategic advantage</em></h2>
+  <div class="psg">
+    <div class="ps reveal"><div class="sn">01</div><h3>Configure Scope</h3><p>We define your monitoring domain: sectors, competitors, countries, legislation, stakeholders, and other data that matter to your institutional mandates.</p></div>
+    <div class="ps reveal"><div class="sn">02</div><h3>Daily AI Sweep</h3><p>Every morning, our system scans global and local news sources, filters for strategic relevance, and rates each story's impact level: High, Medium, or Low.</p></div>
+    <div class="ps reveal"><div class="sn">03</div><h3>Brief Delivery</h3><p>A structured intelligence brief reaches your leadership team: executive narrative, story cards with impact ratings, and institution-specific strategic analysis.</p></div>
+    <div class="ps reveal"><div class="sn">04</div><h3>Knowledge Compounds</h3><p>Every brief feeds the knowledge vault. Entities, storylines, and patterns build over time. Weekly synthesis and monthly strategic reports emerge from the accumulated intelligence.</p></div>
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="section-tag">About WSC</div>
+  <h2 class="section-title">Strategy meets <em>technology</em></h2>
+  <div class="al">
+    <div class="at">
+      <p>Wilson Street Consulting is a professional services firm operating at the intersection of institutional advisory and artificial intelligence.</p>
+      <p>Founded by legal and corporate strategists with decades of experience across mergers and acquisitions, corporate restructuring, institutional advisory, and government, Wilson Street Consulting now channels that strategic experience into building AI-powered intelligence systems for organisations who need data to stay ahead.</p>
+      <p>Our team has worked across oil and gas, education, aviation, healthcare, hospitality, real estate, and banking. We understand how public and private institutions think, what they need to know, and how fast they need to know it.</p>
+    </div>
+    <div class="av">
+      <div class="vc reveal"><h4>⚡ Speed</h4><p>Intelligence delivered on a daily, weekly, monthly basis. Your leadership team starts every morning informed and prepared.</p></div>
+      <div class="vc reveal"><h4>🎯 Precision</h4><p>AI-rated impact scoring means noise is filtered out. Only strategic information reaches your decision-makers.</p></div>
+      <div class="vc reveal"><h4>🔗 Compounding</h4><p>Knowledge vaults grow smarter with every brief, and patterns and relationships surface automatically over weeks and months.</p></div>
+      <div class="vc reveal"><h4>🔒 Scoped</h4><p>Every deployment is tailored to your mandate, your sector, your competitors, and your stakeholders. No generic feeds.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="contact">
+  <div class="section-tag" style="justify-content:center">Get Started</div>
+  <h2 class="section-title">Ready to give your institution an <em>intelligence edge?</em></h2>
+  <p class="cta-sub">Book a briefing with our team. We'll scope your intelligence needs, configure a pilot, and have your first brief delivered in no time.</p>
+  <div class="cta-actions">
+    <a href="mailto:info@wstreetconsulting.com" class="btn-primary" style="text-decoration:none">Get in Touch</a>
+  </div>
+  <div class="ai-disclaimer ai-disclaimer-cta">
+    <strong>AI Output Notice</strong>
+    Aquila intelligence briefs are generated by artificial-intelligence systems applied to publicly available source material. All outputs are informational only and do not constitute legal, financial, investment, or regulatory advice. Outputs may contain errors or omissions. Verify independently before reliance.
+  </div>
+</section>
+
+<footer>
+  <div class="fg">
+    <div class="fb">
+      <div class="logo">
+        <img src="WSC-horizontal.jpeg" class="logo-img" alt="Wilson Street Consulting">
+      </div>
+      <p>AI-powered intelligence systems for private enterprises, institutions, and government agencies.</p>
+    </div>
+    <div class="fc"><h4>Products</h4><a href="#products">Aquila</a></div>
+    <div class="fc"><h4>Company</h4><a href="#about">About</a><a href="#contact">Contact</a></div>
+    <div class="fc"><h4>Legal</h4><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a></div>
+    <div class="fc"><h4>Connect</h4><a href="mailto:info@wstreetconsulting.com">Email Us</a></div>
+  </div>
+  <div class="fbot">
+    <span>© 2026 Gracefield Trading and Investment Limited. All rights reserved.</span>
+    <span class="entity-line">Wilson Street Consulting is a trading name of Gracefield Trading and Investment Limited, registered in the Commonwealth of The Bahamas (Co. No. 1502239).</span>
+  </div>
+</footer>
+
+<div id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <h4>Cookies & analytics</h4>
+  <p>We use a minimal set of cookies and analytics to understand how this site is used and to improve it. No cookies are set until you choose. See our <a href="privacy-policy.html">Privacy Policy</a> for details.</p>
+  <div class="cookie-actions">
+    <button class="cookie-btn primary" onclick="cookieConsent.accept()">Accept analytics</button>
+    <button class="cookie-btn secondary" onclick="cookieConsent.reject()">Reject non-essential</button>
+  </div>
+</div>
+
+<script>
+const observer=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&e.target.classList.add('visible')})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+const menuBtn=document.getElementById('mobileMenuBtn');
+const mobileMenu=document.getElementById('mobileMenu');
+menuBtn.addEventListener('click',()=>{
+  menuBtn.classList.toggle('active');
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(link=>{
+  link.addEventListener('click',()=>{
+    menuBtn.classList.remove('active');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+// Cookie consent with GPC support
+const cookieConsent = {
+  KEY: 'wsc_cookie_consent',
+  banner: document.getElementById('cookieBanner'),
+  init(){
+    if(navigator.globalPrivacyControl === true){
+      try{localStorage.setItem(this.KEY, JSON.stringify({choice:'rejected',gpc:true,ts:Date.now()}));}catch(e){}
+      return;
+    }
+    let stored=null;
+    try{stored=localStorage.getItem(this.KEY);}catch(e){}
+    if(!stored){
+      setTimeout(()=>{this.banner.classList.add('show')}, 800);
+    }
+  },
+  accept(){
+    try{localStorage.setItem(this.KEY, JSON.stringify({choice:'accepted',ts:Date.now()}));}catch(e){}
+    this.banner.classList.remove('show');
+  },
+  reject(){
+    try{localStorage.setItem(this.KEY, JSON.stringify({choice:'rejected',ts:Date.now()}));}catch(e){}
+    this.banner.classList.remove('show');
+  }
+};
+cookieConsent.init();
+</script>
+</body>
+</html>
